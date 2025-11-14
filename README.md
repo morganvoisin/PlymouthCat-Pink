@@ -6,64 +6,64 @@ This is a Plymouth theme.
 
 [Video] https://www.youtube.com/watch?v=c6f478VBhtE
 
-[Blog] https://www.eionix.co.in/2016/10/30/plymouth-theme-for-ubuntu.html
+For custom color, please let me know and I'll do an update to the files for you. Please reference the original creator's README to see instructions on how to get this on alternative distros (https://github.com/krishnan793/PlymouthTheme-Cat/blob/master/README.md)
 
-# Installation
+# ------------------ ARCH LINUX DISTROS ------------------
 
-Clone this repository.
+## 1. Install Plymouth
+Arch does not include Plymouth by default. Install it with:
+    sudo pacman -Syu
+    sudo pacman -S Plymouth
 
-    sudo git clone https://github.com/krishnan793/PlymouthCat-Pink.git /usr/share/plymouth/themes/PlymouthCat-Pink
+If you are using CachyOS, Plymouth may already be installed.
 
-After installing you can test the theme through (as root, preferably on a tty):
+## 2. Clone this repo to your ~/.Downloads folder
+    sudo git clone https://github.com/morganvoisin/PlymouthCat-Pink.git
 
-    # plymouthd
-    # plymouth --show-splash
-    # plymouth --quit
 
-## On most distros
+## 3. Move the theme into your Plymouth theme folder (/usr/share/plymouth/themes)
+    sudo cp -r <your-theme-folder> /usr/share/plymouth/themes/
 
-(Tested on openSUSE Tumbleweed)
+Example:
+    sudo cp -r ~/Downloads/PlymouthCat-Pink /usr/share/plymouth/themes/
 
-### Set GRUB2 up
+## 4. Set the Theme using Plymouth theme selector:
+    sudo plymouth-set-default-theme -R PlymouthTheme-PinkCat
 
-Check `/etc/default/grub`. It should include the following:
+The -R flag automatically rebuilds your initramfs.
 
-    GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+If you want to do it manually:
+    sudo plymouth-set-default-theme PlymouthTheme-PinkCat
+    sudo mkinitcpio -P
 
-* If there are other parameters defined in `GRUB_CMDLINE_LINUX_DEFAULT="..."` you don't have to remove them unless they conflict with the ones above.
-* `quiet` and `splash` are required to start plymouth
-* Additionally you might have to [enable KMS](https://unix.stackexchange.com/a/110589) e.g. in case you're using integrated graphics by Intel by adding `i915.modeset=1`.
+## 5. Enable Plymouth at Boot
+GRUB Users
+Edit /etc/default/grub :
+    sudo nano /etc/default/grub
 
-Reconfigure GRUB2, if you had to add something:
+Find this line:
 
-    sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet"
 
-### Activate the theme
 
-Check that the theme ended up in the right place:
 
-    sudo plymouth-set-default-theme --list
 
-Set the theme as default:
 
-    sudo plymouth-set-default-theme PlymouthCat-Pink -R
 
-The -R option rebuilds the initrd automatically which is necessary.
 
-## On Ubuntu
 
-Install the theme.
 
-    sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/PlymouthCat-Pink/PlymouthCat-Pink.plymouth 100
 
-Select the default theme.
 
-    sudo update-alternatives --config default.plymouth
 
-Update the initramfs image.
 
-    sudo update-initramfs -u
 
-Now reboot.
 
-If you want to install this on < Ubuntu 16.04, change the path from /usr/share/plymouth to /lib/plymouth/ . You need to do this on the PlymouthCat-Pink.plymouth file also.
+
+
+
+
+
+
+
+
