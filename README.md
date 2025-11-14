@@ -1,4 +1,4 @@
-# PlymouthTheme-Cat
+# PlymouthCat-Pink
 This is a Plymouth theme.
 
 [![Video](https://4.bp.blogspot.com/-gG0MBGjEE9M/WBYXrOGrVGI/AAAAAAAABVE/auGpLRYf7jor4hu3jurYGcjaVBapHyAVACLcB/s320/8998adc40112985a8f29cf414925d390.gif)](https://www.youtube.com/watch?v=c6f478VBhtE)
@@ -12,7 +12,7 @@ This is a Plymouth theme.
 
 Clone this repository.
 
-    sudo git clone https://github.com/krishnan793/PlymouthTheme-Cat.git /usr/share/plymouth/themes/PlymouthTheme-Cat
+    sudo git clone https://github.com/krishnan793/PlymouthCat-Pink.git /usr/share/plymouth/themes/PlymouthCat-Pink
 
 After installing you can test the theme through (as root, preferably on a tty):
 
@@ -46,7 +46,7 @@ Check that the theme ended up in the right place:
 
 Set the theme as default:
 
-    sudo plymouth-set-default-theme PlymouthTheme-Cat -R
+    sudo plymouth-set-default-theme PlymouthCat-Pink -R
 
 The -R option rebuilds the initrd automatically which is necessary.
 
@@ -54,7 +54,7 @@ The -R option rebuilds the initrd automatically which is necessary.
 
 Install the theme.
 
-    sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/PlymouthTheme-Cat/PlymouthTheme-Cat.plymouth 100
+    sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/PlymouthCat-Pink/PlymouthCat-Pink.plymouth 100
 
 Select the default theme.
 
@@ -66,4 +66,4 @@ Update the initramfs image.
 
 Now reboot.
 
-If you want to install this on < Ubuntu 16.04, change the path from /usr/share/plymouth to /lib/plymouth/ . You need to do this on the PlymouthTheme-Cat.plymouth file also.
+If you want to install this on < Ubuntu 16.04, change the path from /usr/share/plymouth to /lib/plymouth/ . You need to do this on the PlymouthCat-Pink.plymouth file also.

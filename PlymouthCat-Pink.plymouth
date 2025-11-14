@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=PlymouthCat-Pink
+Description=This is a Plymouth theme with a cat animation.
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/PlymouthCat-Pink
+ScriptFile=/usr/share/plymouth/themes/PlymouthCat-Pink/PlymouthCat-Pink.script
