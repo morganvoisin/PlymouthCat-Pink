@@ -27,7 +27,7 @@ sudo cp -r <your-theme-folder> /usr/share/plymouth/themes/
 
 Example:
 
-    `sudo cp -r ~/Downloads/PlymouthCat-Pink /usr/share/plymouth/themes/`
+    sudo cp -r ~/Downloads/PlymouthCat-Pink /usr/share/plymouth/themes/
 
 
 ## 4. Set the Theme using Plymouth theme selector:
